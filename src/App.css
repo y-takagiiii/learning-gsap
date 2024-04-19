@@ -1,0 +1,7 @@
+body {
+  background-color: #0e100f;
+  color: var(--light);
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+}
