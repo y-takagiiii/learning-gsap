@@ -36,5 +36,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 10px;
+  justify-content: space-around;
+  height: calc(100vh - 86px);
 }

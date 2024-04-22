@@ -1,0 +1,51 @@
+.box {
+  width: 100px;
+  height: 100px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-weight: 600;
+  margin: 10px;
+  font-size: 12px;
+}
+
+p {
+  color: #ffffff;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: 20px;
+  align-items: center;
+  height: calc(100vh - 86px);
+}
+
+.render-button {
+  border: 1px solid #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  color: white;
+  background-color: black;
+}
+
+.flex-row {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.first-render {
+  background-color: blueviolet;
+}
+
+.delayed-count {
+  background-color: skyblue;
+}
+
+.every-render {
+  background-color: fuchsia;
+}
