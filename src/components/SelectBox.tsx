@@ -6,7 +6,7 @@ type Props = {
 };
 
 const SelectBox = ({ selected, onSelect }: Props) => {
-  const optionCount = 10;
+  const optionCount = 14;
   return (
     <select
       className={styles.selectBox}

@@ -8,10 +8,10 @@ gsap.registerPlugin(useGSAP);
 const Component06 = () => {
   const [count, setCount] = useState(0);
   const [delayedCount, setDelayedCount] = useState(0);
-  const container = useRef<HTMLDivElement>(null);
-  const firstRenderBox = useRef<HTMLDivElement>(null);
-  const delayedCountBox = useRef<HTMLDivElement>(null);
-  const everyRenderBox = useRef<HTMLDivElement>(null);
+  const container = useRef<HTMLDivElement | null>(null);
+  const firstRenderBox = useRef<HTMLDivElement | null>(null);
+  const delayedCountBox = useRef<HTMLDivElement | null>(null);
+  const everyRenderBox = useRef<HTMLDivElement | null>(null);
 
   // count変更の0.5秒後にsetDelayedCountを実行する
   useEffect(() => {

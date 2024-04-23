@@ -24,15 +24,18 @@ type ContextProps = {
 const SelectedContext = createContext<ContextProps | null>(null);
 
 const Box = ({ id, children }: BoxProps) => {
-  const boxRef = useRef<HTMLDivElement>(null);
+  const boxRef = useRef<HTMLDivElement | null>(null);
   const context = useContext(SelectedContext);
-  if (context === null) {
-    return;
-  }
-  const { selected } = context;
   useGSAP(() => {
+    if (context === null) {
+      return;
+    }
+    const { selected } = context;
     gsap.to(boxRef.current, { x: selected === id ? 200 : 0 });
-  }, [selected, id]);
+  }, [context, id]);
+  if (context === null) {
+    return null;
+  }
   return (
     <div className={styles.box} ref={boxRef}>
       {children}

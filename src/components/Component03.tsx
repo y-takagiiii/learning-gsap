@@ -20,7 +20,7 @@ const Box = ({ children, className, animation }: BoxProps) => {
 };
 
 const Component03 = () => {
-  const container = useRef<HTMLDivElement>(null);
+  const container = useRef<HTMLDivElement | null>(null);
 
   useGSAP(
     () => {

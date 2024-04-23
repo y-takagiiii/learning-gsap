@@ -7,7 +7,7 @@ gsap.registerPlugin(useGSAP);
 
 const Component07 = () => {
   const [positionX, setPositionX] = useState(0);
-  const containerRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement | null>(null);
   const randomX = gsap.utils.random(-200, 200, 1, true);
 
   useGSAP(

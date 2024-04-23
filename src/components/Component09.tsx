@@ -7,14 +7,17 @@ gsap.registerPlugin(useGSAP);
 
 type Props = {
   className: string;
-  addAnimation?: any;
+  addAnimation: (
+    animation: gsap.core.Tween | gsap.core.TimelineChild,
+    index: number
+  ) => void;
   index: number;
   rotation?: number;
   children: ReactNode;
 };
 
 const Box = ({ className, addAnimation, index, children }: Props) => {
-  const boxRef = useRef<HTMLDivElement>(null);
+  const boxRef = useRef<HTMLDivElement | null>(null);
   useGSAP(() => {
     const animation = gsap.to(boxRef.current, {
       x: -200,
@@ -36,7 +39,7 @@ const Circle = ({
   rotation,
   children,
 }: Props) => {
-  const circleRef = useRef<HTMLDivElement>(null);
+  const circleRef = useRef<HTMLDivElement | null>(null);
   useGSAP(() => {
     const animation = gsap.to(circleRef.current, {
       rotate: rotation,
@@ -53,7 +56,7 @@ const Circle = ({
 };
 
 const Component09 = () => {
-  const [timeline, setTimeline] = useState<gsap.core.Timeline>();
+  const [timeline, setTimeline] = useState<gsap.core.Timeline | null>(null);
 
   const { contextSafe } = useGSAP(() => {
     const tl = gsap.timeline();

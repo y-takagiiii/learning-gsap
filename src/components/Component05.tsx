@@ -6,7 +6,7 @@ import styles from "./Component05.module.css";
 gsap.registerPlugin(useGSAP);
 
 const Component05 = () => {
-  const container = useRef<HTMLDivElement>(null);
+  const container = useRef<HTMLDivElement | null>(null);
   const tl = useRef<gsap.core.Timeline | null>(null);
   const { contextSafe } = useGSAP(
     () => {

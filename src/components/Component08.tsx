@@ -7,7 +7,7 @@ gsap.registerPlugin(useGSAP);
 
 type Props = {
   className: string;
-  timeline?: gsap.core.Timeline;
+  timeline: gsap.core.Timeline | null;
   index: number;
   rotation?: number;
   children: ReactNode;
@@ -20,7 +20,7 @@ type Props = {
 // のどちらかで実装する
 
 const Box = ({ className, timeline, index, children }: Props) => {
-  const boxRef = useRef<HTMLDivElement>(null);
+  const boxRef = useRef<HTMLDivElement | null>(null);
   useGSAP(() => {
     if (timeline && index !== undefined) { // 0はfalseと評価されてしまうのでundefinedではないことをチェック
       timeline.to(
@@ -40,7 +40,7 @@ const Box = ({ className, timeline, index, children }: Props) => {
 };
 
 const Circle = ({ className, timeline, index, rotation, children }: Props) => {
-  const circleRef = useRef<HTMLDivElement>(null);
+  const circleRef = useRef<HTMLDivElement | null>(null);
   useGSAP(() => {
     if (timeline && index !== undefined) {
       timeline.to(
@@ -61,7 +61,7 @@ const Circle = ({ className, timeline, index, rotation, children }: Props) => {
 };
 
 const Component08 = () => {
-  const [timeline, setTimeline] = useState<gsap.core.Timeline>();
+  const [timeline, setTimeline] = useState<gsap.core.Timeline | null>(null);
 
   const { contextSafe } = useGSAP(() => {
     const tl = gsap.timeline();
