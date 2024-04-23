@@ -13,6 +13,7 @@ import Component09 from "./components/Component09";
 import Component10 from "./components/Component10";
 import Component11 from "./components/Component11";
 import Component12 from "./components/Component12";
+import Component13 from "./components/Component13";
 
 function App() {
   const [selectedOption, setSelectedOption] = useState("component01");
@@ -31,6 +32,7 @@ function App() {
       {selectedOption === "component10" && <Component10 />}
       {selectedOption === "component11" && <Component11 />}
       {selectedOption === "component12" && <Component12 />}
+      {selectedOption === "component13" && <Component13 />}
     </div>
   );
 }
